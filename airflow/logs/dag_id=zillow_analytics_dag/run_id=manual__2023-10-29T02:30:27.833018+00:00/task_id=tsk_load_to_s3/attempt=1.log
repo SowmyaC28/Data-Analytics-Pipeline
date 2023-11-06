@@ -1,0 +1,17 @@
+[2023-10-29T02:30:33.697+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: zillow_analytics_dag.tsk_load_to_s3 manual__2023-10-29T02:30:27.833018+00:00 [queued]>
+[2023-10-29T02:30:33.704+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: zillow_analytics_dag.tsk_load_to_s3 manual__2023-10-29T02:30:27.833018+00:00 [queued]>
+[2023-10-29T02:30:33.704+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 3
+[2023-10-29T02:30:33.718+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): tsk_load_to_s3> on 2023-10-29 02:30:27.833018+00:00
+[2023-10-29T02:30:33.720+0000] {standard_task_runner.py:57} INFO - Started process 1603 to run task
+[2023-10-29T02:30:33.724+0000] {standard_task_runner.py:84} INFO - Running: ['airflow', 'tasks', 'run', 'zillow_analytics_dag', 'tsk_load_to_s3', 'manual__2023-10-29T02:30:27.833018+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/analytics.py', '--cfg-path', '/tmp/tmpr2myldm6']
+[2023-10-29T02:30:33.726+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask tsk_load_to_s3
+[2023-10-29T02:30:33.818+0000] {task_command.py:416} INFO - Running <TaskInstance: zillow_analytics_dag.tsk_load_to_s3 manual__2023-10-29T02:30:27.833018+00:00 [running]> on host ip-172-31-56-104.ec2.internal
+[2023-10-29T02:30:33.882+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='chattisowmya@gmail.com' AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='zillow_analytics_dag' AIRFLOW_CTX_TASK_ID='tsk_load_to_s3' AIRFLOW_CTX_EXECUTION_DATE='2023-10-29T02:30:27.833018+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-10-29T02:30:27.833018+00:00'
+[2023-10-29T02:30:33.883+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2023-10-29T02:30:33.883+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'aws s3 mv /home/ubuntu/response_data_29102023023029.json s3://zillowdatabucket/']
+[2023-10-29T02:30:33.889+0000] {subprocess.py:86} INFO - Output:
+[2023-10-29T02:30:34.750+0000] {subprocess.py:93} INFO - Completed 53.8 KiB/53.8 KiB (332.5 KiB/s) with 1 file(s) remainingmove: ../../home/ubuntu/response_data_29102023023029.json to s3://zillowdatabucket/response_data_29102023023029.json
+[2023-10-29T02:30:34.816+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2023-10-29T02:30:34.835+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=zillow_analytics_dag, task_id=tsk_load_to_s3, execution_date=20231029T023027, start_date=20231029T023033, end_date=20231029T023034
+[2023-10-29T02:30:34.858+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-29T02:30:34.879+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
